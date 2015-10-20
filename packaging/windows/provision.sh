@@ -2,7 +2,7 @@
 
 function install_requirements() {
     #for s3cmd installation
-    pip install --upgrade pip
+    python -m pip install -U pip
     
     pip install wheel==0.24.0
     pip install s3cmd==1.5.2
