@@ -15,6 +15,7 @@
 
 import os
 import uuid
+import time
 
 from cloudify_agent.installer import script
 from system_tests import resources
@@ -202,6 +203,7 @@ class AgentInstallerTest(testenv.TestCase):
         self.blueprint_yaml = resources.get_resource(
             'userdata-agent-blueprint/userdata-agent-blueprint.yaml')
         self.upload_deploy_and_execute_install(
+            deployment_id='userdata{0}'.format(time.time()),
             inputs={
                 'image': image,
                 'flavor': flavor,
